@@ -1,11 +1,11 @@
 {
-    "name": "totya/slim-skeleton",
+    "name": "totya/slim-module-skeleton",
     "type": "project",
     "license": "MIT",
     "authors": [
         {
             "name": "Tóth Zoltán",
-            "email": "toth.zoltan@fps.hu"
+            "email": "hello@totya.eu"
         }
     ],
     "require": {
