@@ -5,8 +5,12 @@ require_once('vendor/autoload.php');
 
 use Dopesong\Slim\Error\Whoops as WhoopsError;
 
-$configDir = __DIR__ . '/Config';
-$app = new IS\Slim\Tegar\App($configDir);
+$dotenv = new Dotenv\Dotenv(__DIR__ ."/../");
+$dotenv->load();
+$dotenv->required('DB_TYPE');
+
+$depedenciesDir = __DIR__ . '/Depedencies';
+$app = new IS\Slim\Tegar\App($depedenciesDir);
 
 require_once('routes.php');
 
