@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'flash' => function () {
+    'logger' => function () {
         $settings = [
 			'directory' => 'storage/logs',
 			'filename' => 'app.log',
