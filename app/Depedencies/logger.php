@@ -3,10 +3,10 @@
 return [
     'logger' => function () {
         $settings = [
-			'directory' => 'storage/logs',
-			'filename' => 'app.log',
-			'timezone' => 'Europe/Budapest',
-			'level' => 'debug',
+			'directory' => getenv('LOG_DIR'),
+			'filename' => getenv('LOG_FILE'),
+			'timezone' => getenv('TIMEZONE'),
+			'level' => getenv('LOG_LEVEL'),
 			'handlers' => [],
 		];
 

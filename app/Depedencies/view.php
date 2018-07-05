@@ -10,8 +10,8 @@ return [
 
 		$twig = new \Slim\Views\Twig($modulePaths, [
 			'debug' => false,
-			'charset' => 'utf-8',
-			'cache' => 'storage/cache/twig',
+			'charset' => getenv('CHARSET'),
+			'cache' => getenv('TWIG_CACHEDIR'),
 			'auto_reload' => true,
 		]);
 		$twig->addExtension(

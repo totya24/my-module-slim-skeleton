@@ -149,5 +149,27 @@ Class BaseController
 	public function render($template = null, $data = []){
 		return $this->view->render($template, $data);
 	}
+
+	public function jsonResponse($data, $success = true, $errors = [], $code = 200){
+		$response = $this->container->get('response');
+        $result = [
+            'success' => (bool)$success,
+            'code' => (int)$code,
+            'errors' => $errors,
+            'data' => $data
+        ];
+        
+        return $response->withHeader('Content-type', 'application/json')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+            ->withHeader('Access-Control-Allow-Origin', '*')
+            ->withHeader('Access-Control-Allow-Credentials', true)
+            ->withHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Origin, Access-Control-Allow-Headers, No-Auth, Origin, Content-Type, Accept, Authorization, X-Request-With')
+            ->withJson($result, $code, JSON_NUMERIC_CHECK);
+
+	}
+
+	public function optionsHandle($request, $response, $args = null){
+        return $this->jsonResponse(true);
+    }
 	
 }

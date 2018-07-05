@@ -5,7 +5,8 @@ use Dopesong\Slim\Error\Whoops as WhoopsError;
 
 $errorHandler = function ($c) {
     $logger = $c->get('logger');
-    $whoopsHandler = new WhoopsError();
+    $showError = getenv('SHOW_ERRORS');
+    $whoopsHandler = new WhoopsError($showError);
 
     $whoopsHandler->pushHandler(
         function ($exception) use ($logger) {
