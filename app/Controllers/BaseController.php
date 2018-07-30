@@ -147,7 +147,8 @@ Class BaseController
 	}
 	
 	public function render($template = null, $data = []){
-		return $this->view->render($template, $data);
+		$response = $this->container->get('response');
+		return $this->view->render($response, $template, $data);
 	}
 
 	public function jsonResponse($data, $success = true, $errors = [], $code = 200){

@@ -12,6 +12,6 @@ Class MainController extends BaseController
 			'title' => 'my slim boilerplate',
 		];
 		sdf
-		$this->render($response, 'pages/page.twig', $data);
+		$this->render('pages/page.twig', $data);
 	}
 }
