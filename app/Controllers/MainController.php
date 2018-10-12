@@ -11,6 +11,7 @@ Class MainController extends BaseController
         $data = [
 			'title' => 'my slim boilerplate',
 		];
-		$this->render($response, 'pages/page.twig', $data);
+
+		return $this->render($response, 'pages/page.twig', $data);
 	}
 }
