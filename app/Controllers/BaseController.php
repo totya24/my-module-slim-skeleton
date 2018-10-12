@@ -19,7 +19,6 @@ Class BaseController
 		$assets = $container->get('assets');
 		
 		$this->view = $twig;
-		$this->flash = $container->get('flash');
 		$this->container = $container;
 		$this->twigEnv = $twig->getEnvironment();
 		$this->baseUrl = $request->getUri()->getBaseUrl();
@@ -52,6 +51,12 @@ Class BaseController
 
 		$this->twigEnv->addGlobal('app', $appData);
 	}
+
+	public function __get($property){
+		if( $this->container->has($property) ){
+			return $this->container->get($property);
+		}
+    }
 	
     public function _isExternalUrl($url){
 		return !(strpos($url, '//') === false);
