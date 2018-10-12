@@ -151,8 +151,7 @@ Class BaseController
         $this->twigEnv->addGlobal('app', $appData['app']);
 	}
 	
-	public function render($template = null, $data = []){
-		$response = $this->container->get('response');
+	public function render($response, $template = null, $data = []){
 		return $this->view->render($response, $template, $data);
 	}
 
