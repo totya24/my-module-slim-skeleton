@@ -10,8 +10,8 @@ $dotenv = new Dotenv\Dotenv(__DIR__ ."/../");
 $dotenv->load();
 $dotenv->required('DB_TYPE');
 
-$depedenciesDir = __DIR__ . '/Depedencies';
-$app = new IS\Slim\Tegar\App($depedenciesDir);
+$dependenciesDir = __DIR__ . '/Dependencies';
+$app = new IS\Slim\Tegar\App($dependenciesDir);
 
 require_once('routes.php');
 
