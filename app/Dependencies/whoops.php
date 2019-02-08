@@ -19,6 +19,6 @@ $errorHandler = function ($c) {
 };
 
 return [
-	'phpErrorHandler' => $errorHandler,
-	'errorHandler' => $errorHandler
+    'phpErrorHandler' => $errorHandler,
+    'errorHandler' => $errorHandler
 ];
